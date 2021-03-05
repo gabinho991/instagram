@@ -105,6 +105,6 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         //user are not logged out when clicking on back button
-        //finish();
+        finish();
     }
 }
