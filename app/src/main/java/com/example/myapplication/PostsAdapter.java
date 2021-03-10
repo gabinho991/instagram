@@ -48,21 +48,33 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         private TextView tvUsername;
         private TextView tvDescription;
         private ImageView ivImage;
+        private ImageView profile;
+        //private TextView date;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvUsername = itemView.findViewById(R.id.tvUsername);
             ivImage=itemView.findViewById(R.id.ivImage);
+            profile=itemView.findViewById(R.id.profile);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+           // date = itemView.findViewById(R.id.date);
         }
 
         public void bind(Post post) {
         tvDescription.setText(post.getdescription());
+            //date.setText((CharSequence) post.getDate("createdAt"));
+
         tvUsername.setText(post.getUser().getUsername());
             ParseFile image = post.getImage();
+            ParseFile image2 = post.getImage2();
             if(image !=null) {
                 Glide.with(context).load(image.getUrl()).into(ivImage);
+
+            }
+            if(image2 !=null) {
+                Glide.with(context).load(image.getUrl()).into(profile);
+
             }
         }
     }

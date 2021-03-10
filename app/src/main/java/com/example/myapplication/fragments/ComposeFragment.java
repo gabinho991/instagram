@@ -165,7 +165,6 @@ public class ComposeFragment extends Fragment {
     }
 
 
-
     private void savePost(String description, ParseUser currentUser, File photoFile) {
         Post post=new Post();
         post.setdescription(description);
